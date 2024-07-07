@@ -25,12 +25,12 @@ fi
 # clone直後はnode_modulesフォルダだけが無い。package.jsonに基づいてインストール
 yarn
 
-if [ "$NODE_ENV" = "development" ]; then
-  yarn run dev
-elif [ "$NODE_ENV" = "production" ]; then
+if [ "$VITE_REACT_APP_IS_BUILD_IMAGE" = "True" ]; then
   yarn remove @types/react-dom @vitejs/plugin-react-swc
   yarn add @types/react-dom @vitejs/plugin-react-swc
   yarn run build
+elif [ "$NODE_ENV" = "development" ]; then
+  yarn run dev
 fi
 
 # tail -f /dev/null
