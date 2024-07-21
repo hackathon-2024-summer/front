@@ -9,7 +9,8 @@ services:
     env_file:
       - .env
     volumes:
-      - .:/home/appuser/devcon
+      - ..:/home/appuser
+      - .:/home/appuser/front
     ports:
       - ${PORT_VITE}:${PORT_VITE}
-    command: ["/bin/bash", "-c", "/home/appuser/devcon/build.sh"]
+    command: ["/bin/bash", "-c", "/home/appuser/front/build.sh"]

@@ -2,14 +2,14 @@
   "name": "hackathon_2024_summer_front",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "reactapp",
-  "workspaceFolder": "/home/appuser/devcon",
+  "workspaceFolder": "/home/appuser/front",
   "shutdownAction": "stopCompose",
   "remoteUser": "appuser",
   "updateRemoteUserUID": true,
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh"
+        "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
         "mhutchie.git-graph",
@@ -17,6 +17,6 @@
         "bradlc.vscode-tailwindcss"
       ]
     }
-  },
-  "postCreateCommand": "sh -c 'curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --unattended && echo \"source $HOME/.oh-my-zsh/oh-my-zsh.sh\" >> ~/.zshrc'",
+  }
+  // "postCreateCommand": "sh -c 'curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --unattended && echo \"source $HOME/.oh-my-zsh/oh-my-zsh.sh\" >> ~/.zshrc'",
 }

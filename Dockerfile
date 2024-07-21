@@ -23,11 +23,11 @@ RUN if ! grep -q ":x:$MY_GID:" /etc/group; then groupadd -g $MY_GID appgroup; fi
 # パスワード無しでroot権限をappuserにも付与する。
 RUN usermod -aG sudo appuser && \
   echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
-  mkdir /home/appuser/devcon && chown -R appuser:appgroup /home/appuser/devcon
+  mkdir /home/appuser/front && chown -R appuser:appgroup /home/appuser/front
 
 # MY_UID・MY_GIDのユーザーに変更
 USER appuser
-WORKDIR /home/appuser/devcon
+WORKDIR /home/appuser/front
 
 # Dockerfileを作る際に使用。
 # ENTRYPOINT ["/bin/sh", "-c"]
